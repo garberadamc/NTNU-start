@@ -124,7 +124,8 @@ ____________________________________
 
 ## PRACTICE: CREATE SUB-FOLDERS
 
-0. folder `03-efa` is empty... 
+Folder `03-efa` is empty... 
+
 1. create folder named `data`
 2. create folder named `efa_mplus`
 
