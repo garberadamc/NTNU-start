@@ -1,4 +1,4 @@
-# NTNU-workshop
+# NTNU Workshop
 
 ***
 
@@ -23,4 +23,4 @@ Large repository preparations:
 
 ## Step 2
 
-Install and load packages. See end of the script named `01-intro.Rmd` for full list of files.
+Install and load packages. See end of the script named `01-intro.Rmd` for full list of packages.
