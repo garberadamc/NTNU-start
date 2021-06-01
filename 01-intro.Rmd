@@ -57,7 +57,7 @@ ______________________________________________
 - To make this work each course participant must manually copy the file-path of their project folder location into the file named `rep_functions.R`. 
 
 ```{r, eval=FALSE}
-project_location <- "/your/unique/file-path-stem/NTNU-workshop" # NOTE manual change required
+project_location <- "/your/unique/file-path-stem/NTNU-start" # NOTE manual change required
 ```
 
 - This can easily be done by loading the `here` package, running `here()`, and copying the path. 

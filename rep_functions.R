@@ -1,6 +1,6 @@
 # functions
 
-project_location <- "/Users/agarber/github/NTNU-workshop"
+project_location <- "/EMPTY/YOU/FILL/IN/NTNU-start"
 
 change_here <- function(new_path){
   new_root <- here:::.root_env
