@@ -1,0 +1,19 @@
+TITLE:
+EXPLORATORY FACTOR ANALYSIS - LAB DEMO
+DATA:
+FILE = "/Users/agarber/github/NTNU-start/02-run-models/basic_mplus/EFA_Lab_DEMO.dat";
+ 
+VARIABLE:
+NAMES = item1 item2 item3 item4 item5 item6 item7 item8 item9 female; 
+ MISSING=.;
+ usevar=
+  item1 item2 item3 item4 item5
+  item6 item7 item8 item9;
+ANALYSIS:
+type = efa 1 5;
+  estimator = MLR;
+  parallel=50;
+OUTPUT:
+sampstat standardized residual modindices (3.84);
+PLOT:
+type = plot3;

@@ -1,0 +1,42 @@
+Mplus VERSION 8.6 (Mac)
+MUTHEN & MUTHEN
+06/01/2021   9:55 AM
+
+INPUT INSTRUCTIONS
+
+  TITLE:
+  RUN TYPE = BASIC ANALYSIS - LAB 1
+  DATA:
+  FILE = "/Users/agarber/github/NTNU-start/12-path-models/mplus_files/nces.dat";
+
+  VARIABLE:
+  NAMES = bystlang freelnch byincome stolen t_hurt p_fight hit damaged bullied unsafe
+       disrupt gangs rac_fght late skipped mth_test rd_test;
+   MISSING=.;
+    ! an mplusObject() will always need a 'usevar' statement
+        ! ONLY specify variables that will be used in analysis
+        ! lines of code in MPLUS ALWAYS end with a semicolon ';'
+
+      usevar =
+      bystlang freelnch byincome stolen t_hurt p_fight
+      hit damaged bullie, unsafe disrupt gangs rac_fght
+      late skipped mth_test rd_test;
+  ANALYSIS:
+  type = basic
+
+*** ERROR in VARIABLE command
+  On the USEVARIABLES list, variables from the NAMES list must come before
+  all new variables created using the DEFINE command.  The variables(s)
+  violating this order are:  BULLIE
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2021 Muthen & Muthen
