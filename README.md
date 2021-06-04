@@ -8,7 +8,7 @@ This repository does not have Mplus models estimated.
 
 See associated repository with all Mplus models included (https://github.com/garberadamc/NTNU-workshop)
 
-personal website - adam-garber.com
+personal website - https://www.adam-garber.com/
 
 course materials - https://garberadamc.github.io/project-site/
 
