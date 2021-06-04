@@ -1,0 +1,51 @@
+Mplus VERSION 8.6 (Mac)
+MUTHEN & MUTHEN
+06/02/2021   8:32 AM
+
+INPUT INSTRUCTIONS
+
+  TITLE:
+  m4 growth model - HSLS
+  DATA:
+  FILE = "/Users/agarber/github/NTNU-start/17-growth-models/mplus_files/hsls_rep_5f026708b7b
+
+  VARIABLE:
+  NAMES = stu_id x1stdob x1ses x1sex x1race x1par1edu x1par2edu x1mtscor x2mtscor
+       x3gpa9 x3gpaacd x1parexp s1eduexp s2eduexp s4eduexp;
+   MISSING=.;
+   usevar = s1eduexp-s4eduexp;
+       categorical = s1eduexp-s4eduexp; !!! key difference !!!
+  MODEL:
+  ! 0=09 1=10 2=11 3=12 | 4=13 5=14 6=15 7=16
+
+      i s | s1eduexp@0 s2eduexp@3 s4eduexp@7;
+  OUTPUT:
+  sampstat standardized;
+  PLOT:
+  type=plot3;
+            series = s1eduexp-s4eduexp(*);
+
+*** WARNING
+  Input line exceeded 90 characters. Some input may be truncated.
+  FILE = "/Users/agarber/github/NTNU-start/17-growth-models/mplus_files/hsls_rep_5f026708b7b2
+*** WARNING in DATA command
+  Statement not terminated by a semicolon:
+  FILE = "/Users/agarber/github/NTNU-start/17-growth-models/mplus_files/hsls_rep_5f026708b7b2
+*** WARNING in DATA command
+  Mismatched quotation in FILE option.  A quotation mark will be assumed at
+  the end of the line.
+*** ERROR in DATA command
+  The file specified for the FILE option cannot be found.  Check that this
+  file exists:  /Users/agarber/github/NTNU-start/17-growth-models/mplus_files/hsls_rep_5f026708b7b2
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2021 Muthen & Muthen

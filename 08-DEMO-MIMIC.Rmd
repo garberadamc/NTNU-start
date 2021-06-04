@@ -1,0 +1,88 @@
+
+## loading packages:
+```{r, eval=TRUE}
+library(tidyverse)
+library(here)
+library(semPlot)
+library(DiagrammeR)
+library(MplusAutomation) 
+library(stargazer)
+library(gtsummary) 
+library(gt)
+library(glue)
+```
+
+
+## read in data
+```{r, eval=TRUE}
+
+lab_data <- read_csv("https://garberadamc.github.io/project-site/data/els_sub5_data.csv")
+
+```
+
+
+## prepare dataframe for analysis (select & reorder columns)
+```{r}
+
+mimic_data <-  lab_data %>% 
+  select(bystlang, freelnch, byincome,                    # covariates
+         stolen, t_hurt, p_fight, hit, damaged, bullied,  # factor 1 (indicators)
+         safe, disrupt, gangs, rac_fght,                  # factor 2 (indicators)
+         late, skipped, mth_read, mth_test, rd_test) %>% 
+  mutate(
+    freelnch = case_when(    # Grade 10, percent free lunch - transform to binary
+        freelnch <  5 ~ 0,   # < 50%
+        freelnch >= 5 ~ 1))  # > 50%
+
+```
+
+
+```{r}
+
+cfa_m0 <- mplusObject(
+  
+  TITLE = "CFA model0",
+  
+  VARIABLE = "usevar = stolen-rac_fght;",
+  
+  ANALYSIS = "estimator = mlr;",
+  
+  MODEL = "FACTOR_1 by stolen t_hurt p_fight hit damaged bullied;
+           FACTOR_2 BY safe disrupt gangs rac_fght;",
+  
+  PLOT = "type = plot3;",
+  
+  OUTPUT = "sampstat standardized residual modindices (3.84);",
+  
+  usevariables = colnames(mimic_data),
+  rdata = mimic_data
+)
+
+cfa_m0_fit <- mplusModeler(cfa_m0,
+                           dataout = here("08-MIMIC", "mimic_mplus", "mimic_data.dat"),
+                           modelout = here("08-MIMIC", "mimic_mplus", "cfa_model0.inp"),
+                           check = TRUE, run = TRUE, hashfilename = FALSE)
+              
+```
+
+
+```{r}
+
+mimic1_output <- readModels(here("08-MIMIC", "mimic_mplus"))
+
+```
+
+```{r}
+
+semPaths(mimic1_output)
+
+```
+
+
+
+
+
+
+
+
+

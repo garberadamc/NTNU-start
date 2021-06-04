@@ -1,0 +1,16 @@
+------Begin Mplus Model Run: 02Jun2021 08:05:27------
+Run options:
+	Recursive (run models in subdirectories): TRUE
+	Show output on console: FALSE
+	Replace existing outfile: always
+------
+Currently running model: C1_PYDI_LCA.inp
+Currently running model: C2_PYDI_LCA.inp
+Currently running model: C3_PYDI_LCA.inp
+Currently running model: C4_PYDI_LCA.inp
+Currently running model: C5_PYDI_LCA.inp
+Currently running model: C6_PYDI_LCA.inp
+Currently running model: C7_PYDI_LCA.inp
+Currently running model: C8_PYDI_LCA.inp
+
+------End Mplus Model Run: 02Jun2021 08:05:39------
